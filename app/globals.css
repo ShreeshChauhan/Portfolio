@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0A0A0C;
+  --color-void-panel: #131316;
+  --color-void-border: #25252B;
+
+  --color-bone: #EFEDE8;
+  --color-muted: #8B8A92;
+
+  --color-crimson: #8C2A26;
+  --color-crimson-bright: #C1443D;
+  --color-crimson-dim: #4A1917;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-plex-mono), monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0c;
+  color: #efede8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #8c2a26;
+  color: #efede8;
+}
+
+:focus-visible {
+  outline: 2px solid #c1443d;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Infinite marquee ticker */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
