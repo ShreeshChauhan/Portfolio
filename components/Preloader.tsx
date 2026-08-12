@@ -24,12 +24,15 @@ function CurtainContent() {
         </span>
       ))}
 
-      <h1 className="font-display text-[15vw] font-semibold leading-[0.88] tracking-tight text-bone sm:text-[13vw] md:text-[10vw] -mt-[3vw] md:mt-0">
-  SHREESH
-  <br />
-  <br />
-  CHAUHAN
-</h1>
+      <div className="flex flex-col items-center">
+  <h1 className="font-display text-[15vw] font-semibold leading-[0.88] tracking-tight text-bone sm:text-[13vw] md:text-[10vw]">
+    SHREESH
+  </h1>
+  <div className="h-12 md:h-16" /> {/* fixed gap — predictable on all screens */}
+  <h1 className="font-display text-[15vw] font-semibold leading-[0.88] tracking-tight text-bone sm:text-[13vw] md:text-[10vw]">
+    CHAUHAN
+  </h1>
+</div>
       <p className="mt-6 font-mono text-xs uppercase tracking-[0.3em] text-crimson-bright md:text-sm">
         AI/ML &amp; Backend Software Engineer
       </p>
