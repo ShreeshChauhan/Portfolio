@@ -18,18 +18,18 @@ function CurtainContent() {
       {CORNERS.map((c) => (
         <span
           key={c.label}
-          className={`absolute ${c.pos} font-mono text-[10px] uppercase tracking-[0.25em] text-muted md:text-xs`}
+          className={`absolute ${c.pos} font-mono text-[9px] uppercase tracking-[0.2em] text-muted md:text-xs max-w-[38%] leading-tight`}
         >
           {c.label}
         </span>
       ))}
 
-      <h1 className="font-display text-[15vw] font-semibold leading-[0.88] tracking-tight text-bone sm:text-[13vw] md:text-[10vw]">
-        SHREESH
-        <br />
-        <br />
-        CHAUHAN
-      </h1>
+      <h1 className="font-display text-[15vw] font-semibold leading-[0.88] tracking-tight text-bone sm:text-[13vw] md:text-[10vw] -mt-[3vw] md:mt-0">
+  SHREESH
+  <br />
+  <br />
+  CHAUHAN
+</h1>
       <p className="mt-6 font-mono text-xs uppercase tracking-[0.3em] text-crimson-bright md:text-sm">
         AI/ML &amp; Backend Software Engineer
       </p>
@@ -109,16 +109,18 @@ export default function Preloader() {
         </motion.div>
 
         {/* hairline seam + hint */}
-        <motion.div
-          animate={{ opacity: open ? 0 : 1 }}
-          transition={{ duration: 0.3 }}
-          className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 flex-col items-center"
-        >
-          <div className="h-px w-24 bg-void-border" />
-          <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
-            Click or scroll to enter
-          </span>
-        </motion.div>
+        // Fix 2: Nudge hint below the seam using padding instead of translate
+{/* hairline seam */}
+<motion.div
+  animate={{ opacity: open ? 0 : 1 }}
+  transition={{ duration: 0.3 }}
+  className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center"
+>
+  <div className="h-px w-24 bg-void-border" />
+  <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+    Click or scroll to enter
+  </span>
+</motion.div>
       </div>
     </AnimatePresence>
   );
