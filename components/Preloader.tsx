@@ -111,19 +111,17 @@ export default function Preloader() {
           <CurtainContent />
         </motion.div>
 
-        {/* hairline seam + hint */}
-        // Fix 2: Nudge hint below the seam using padding instead of translate
-{/* hairline seam */}
-<motion.div
-  animate={{ opacity: open ? 0 : 1 }}
-  transition={{ duration: 0.3 }}
-  className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center"
->
-  <div className="h-px w-24 bg-void-border" />
-  <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
-    Click or scroll to enter
-  </span>
-</motion.div>
+                {/* hairline seam */}
+        <motion.div
+          animate={{ opacity: open ? 0 : 1 }}
+          transition={{ duration: 0.3 }}
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center"
+        >
+          <div className="h-px w-24 bg-void-border" />
+          <span className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+            Click or scroll to enter
+          </span>
+        </motion.div>
       </div>
     </AnimatePresence>
   );
