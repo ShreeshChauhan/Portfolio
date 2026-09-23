@@ -7,7 +7,8 @@ type Project = {
   tagline: string;
   highlights: string[];
   tags: string[];
-  span: string; // grid span classes
+  span: string;
+  image: string;
 };
 
 const PROJECTS: Project[] = [
@@ -22,6 +23,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["PyTorch Geometric", "GraphSAGE", "FastAPI", "Gemini API"],
     span: "md:col-span-4 md:row-span-2",
+    image: "/images/fraud-copilot.jpg.",
   },
   {
     title: "CourtPrice",
@@ -34,6 +36,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["React", "Node.js", "Express", "eBay Browse API"],
     span: "md:col-span-2 md:row-span-1",
+    image: "/images/courtprice.jpg.jpeg",
   },
   {
     title: "SOL QUEST",
@@ -46,6 +49,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["Django", "Solana", "React", "Phaser"],
     span: "md:col-span-2 md:row-span-1",
+    image: "/images/sol-quest.jpg.jpeg",
   },
 ];
 
@@ -78,6 +82,15 @@ export default function FeaturedWork() {
             whileHover={{ scale: 1.012 }}
             className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-void-border bg-void-panel p-7 transition-colors hover:border-crimson-bright/60 ${project.span}`}
           >
+            {/* Background image — subtle at rest, more visible on hover */}
+            <div
+              className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20 transition-opacity duration-500 group-hover:opacity-40"
+              style={{ backgroundImage: `url(${project.image})` }}
+            />
+
+            {/* Gradient overlay to keep text readable */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void-panel via-void-panel/85 to-void-panel/60" />
+
             {/* top-right arrow, revealed on hover */}
             <motion.span
               initial={{ opacity: 0, x: -6, y: 6 }}
@@ -87,7 +100,7 @@ export default function FeaturedWork() {
               ↗
             </motion.span>
 
-            {/* ambient glow */}
+            {/* Ambient glow */}
             <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-crimson/0 blur-3xl transition-colors duration-500 group-hover:bg-crimson/25" />
 
             <div className="relative pr-10">
@@ -100,7 +113,7 @@ export default function FeaturedWork() {
             </div>
 
             <div className="relative mt-6">
-              {/* highlights reveal on hover */}
+              {/* Highlights reveal on hover */}
               <ul className="max-h-0 space-y-1.5 overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:max-h-40 group-hover:opacity-100">
                 {project.highlights.map((h) => (
                   <li
@@ -126,7 +139,7 @@ export default function FeaturedWork() {
           </motion.article>
         ))}
 
-        {/* center badge between grids, per reference design */}
+        {/* Center badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
