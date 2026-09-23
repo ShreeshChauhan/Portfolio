@@ -23,7 +23,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["PyTorch Geometric", "GraphSAGE", "FastAPI", "Gemini API"],
     span: "md:col-span-4 md:row-span-2",
-    image: "/images/fraud-copilot.jpg.",
+    image: "/public/fraud-copilot.jpg.",
   },
   {
     title: "CourtPrice",
@@ -36,7 +36,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["React", "Node.js", "Express", "eBay Browse API"],
     span: "md:col-span-2 md:row-span-1",
-    image: "/images/courtprice.jpg.jpeg",
+    image: "/public/courtprice.jpg.jpeg",
   },
   {
     title: "SOL QUEST",
@@ -49,7 +49,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["Django", "Solana", "React", "Phaser"],
     span: "md:col-span-2 md:row-span-1",
-    image: "/images/sol-quest.jpg.jpeg",
+    image: "/public/sol-quest.jpg.jpeg",
   },
 ];
 
