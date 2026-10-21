@@ -158,7 +158,7 @@ export default function FeaturedWork() {
     </span>
 
     <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted transition-colors group-hover:text-crimson-bright">
-      github.com/shreeshchauhan
+      github.com/ShreeshChauhan
     </p>
   </div>
 </motion.a>
