@@ -139,23 +139,29 @@ export default function FeaturedWork() {
           </motion.article>
         ))}
 
-        {/* Center badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center rounded-2xl border border-void-border bg-void-panel p-7 md:col-span-2 md:row-span-1"
-        >
-          <div className="text-center">
-            <span className="font-mono text-3xl text-crimson-bright">
-              {"</>"}
-            </span>
-            <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted">
-              github.com/shreeshchauhan
-            </p>
-          </div>
-        </motion.div>
+        {/* GitHub Card */}
+<motion.a
+  href="https://github.com/shreeshchauhan"
+  target="_blank"
+  rel="noopener noreferrer"
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true, margin: "-60px" }}
+  transition={{ duration: 0.5, delay: 0.3 }}
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.98 }}
+  className="group flex cursor-pointer items-center justify-center rounded-2xl border border-void-border bg-void-panel p-7 transition-colors hover:border-crimson-bright/60 md:col-span-2 md:row-span-1"
+>
+  <div className="text-center">
+    <span className="font-mono text-3xl text-crimson-bright transition-colors group-hover:text-bone">
+      {"</>"}
+    </span>
+
+    <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted transition-colors group-hover:text-crimson-bright">
+      github.com/shreeshchauhan
+    </p>
+  </div>
+</motion.a>
       </div>
     </section>
   );
